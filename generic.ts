@@ -3,10 +3,11 @@ enum Gender {
   Female,
 }
 
-interface ObjectInt {
+interface Objecta {
   g: Gender,
   n: string
 }
+
 
 let groupBy = <T, U>(array: T[], callback: (el: T) => U ): {[key: string]: T[] }  => {
 
@@ -19,22 +20,19 @@ let groupBy = <T, U>(array: T[], callback: (el: T) => U ): {[key: string]: T[] }
 
         //we are check if current key doesn't exist in this object
         if (typeof result[key] === 'undefined') {
-          console.log('here 1')
-          console.log(result[key] = [el])
             return result[key] = [el]
             
         }
         return result[key].push(el)
     })
   console.log(result)
-
+  console.log('-------------------------')
   return result
-  
 }
 
 groupBy<number, number>([1.2, 1.1, 2.3, 0.4], Math.floor) 
 groupBy<string, string>(["one", "two", "three"], (el) => el.length)
-groupBy<ObjectInt, Gender>(
+groupBy<Objecta, Gender>(
   [
     { g: Gender.Male, n: "A" },
     { g: Gender.Female, n: "B" },
