@@ -4,7 +4,7 @@ enum Gender {
 }
 
 interface Objecta {
-  g: Gender,
+  g: Gender | null,
   n: string
 }
 
